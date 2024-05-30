@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>estructura corporativa</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        var map = L.map('map', {
+            crs: L.CRS.Simple,
+            minZoom: -5
+        });
+
+        var bounds = [[0,0], [4500,8000]];
+        var image = L.imageOverlay('EstructuraCorporativa_Ingles.jpg', bounds).addTo(map);
+
+        map.fitBounds(bounds);
+    </script>
+</body>
+</html>
